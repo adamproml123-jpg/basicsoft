@@ -28,10 +28,9 @@ $officeFile = ".\Office2013Setup.exe"
 if (-Not (Test-Path $officeFile)) {
     Write-Host "[INFO] Office 2013 installer not found." -ForegroundColor Cyan
     Write-Host "Please download Office 2013 Home & Student 32-bit manually from your website." -ForegroundColor Yellow
-    Write-Host "Once downloaded, place the 'Office2013Setup.exe' file in the same folder as this script and re-run." -ForegroundColor Yellow
 
     # Open the website in default browser
-    Start-Process "https://massgrave.dev/genuine-installation-media"
+    Start-Process "https://massgrave.dev/office_c2r_links"
     Write-Host "Press any key to close..." -ForegroundColor Cyan
     $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown") 
     
