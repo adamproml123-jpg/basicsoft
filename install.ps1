@@ -32,7 +32,7 @@ if (-Not (Test-Path $officeFile)) {
 
     # Open the website in default browser
     Start-Process "https://massgrave.dev/genuine-installation-media" 
-    exit
+    
 } else {
     Write-Host "[INSTALLING] Office 2013..." -ForegroundColor Yellow
     Start-Process $officeFile -ArgumentList "/quiet" -Wait
