@@ -23,7 +23,7 @@ Install-App "WinRAR" "RARLab.WinRAR"
 Install-App "VLC Player" "VideoLAN.VLC"
 
 #Office 2013 installation
-$officeUrl = "https://github.com/adamproml123-jpg/basicsoft/releases/tag/v1.0/Office2013Setup.exe"
+$officeUrl = "https://drive.google.com/uc?export=download&id=1fA7o9ix8MUHWhsBH7N41YtH9tYt5OT2p"
 $officeFile = "$env:TEMP\Office2013Setup.exe"
 
 Write-Host "[DOWNLOADING] Office 2013..." -ForegroundColor Yellow
