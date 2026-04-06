@@ -23,39 +23,22 @@ Install-App "WinRAR" "RARLab.WinRAR"
 Install-App "VLC Player" "VideoLAN.VLC"
 
 #Office 2013 installation
-# ==============================
-# Google Drive large file downloader
-# ==============================
+$officeFile = ".\Office2013Setup.exe"
 
-$FileId = "1fA7o9ix8MUHWhsBH7N41YtH9tYt5OT2p"
-$Destination = "$env:TEMP\Office2013Setup.exe"
+if (-Not (Test-Path $officeFile)) {
+    Write-Host "[INFO] Office 2013 installer not found." -ForegroundColor Cyan
+    Write-Host "Please download Office 2013 Home & Student 32-bit manually from your website." -ForegroundColor Yellow
+    Write-Host "Once downloaded, place the 'Office2013Setup.exe' file in the same folder as this script and re-run." -ForegroundColor Yellow
 
-Write-Host "[INFO] Downloading Office 2013 from Google Drive..." -ForegroundColor Cyan
-
-# Create web session to handle cookies
-$session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
-
-# Initial request (Google may require confirmation for large files)
-$initial = Invoke-WebRequest -Uri "https://drive.google.com/uc?export=download&id=$FileId" -WebSession $session
-
-# Check if a confirm token is required
-if ($initial.Content -match "confirm=([0-9A-Za-z_]+)&") {
-    $confirm = $matches[1]
-    $downloadUrl = "https://drive.google.com/uc?export=download&confirm=$confirm&id=$FileId"
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $Destination -WebSession $session -UseBasicParsing
+    # Open the website in default browser
+    Start-Process "https://massgrave.dev/genuine-installation-media" 
+    exit
 } else {
-    # No confirmation needed
-    Invoke-WebRequest -Uri "https://drive.google.com/uc?export=download&id=$FileId" -OutFile $Destination -WebSession $session -UseBasicParsing
+    Write-Host "[INSTALLING] Office 2013..." -ForegroundColor Yellow
+    Start-Process $officeFile -ArgumentList "/quiet" -Wait
+    Write-Host "[DONE] Office 2013 installed." -ForegroundColor Green
 }
 
-Write-Host "[INFO] Download complete. Starting installer..." -ForegroundColor Green
-
-# Start Office installer silently
-Start-Process $Destination -ArgumentList "/quiet" -Wait
-
-Write-Host "[DONE] Office 2013 installation finished." -ForegroundColor Cyan
-
-Write-Host "[DONE] Office 2013 Installed" -ForegroundColor Green
 
 Write-Host ""
 Write-Host "ALL TASKS COMPLETED!" -ForegroundColor Cyan
