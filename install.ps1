@@ -31,7 +31,9 @@ if (-Not (Test-Path $officeFile)) {
     Write-Host "Once downloaded, place the 'Office2013Setup.exe' file in the same folder as this script and re-run." -ForegroundColor Yellow
 
     # Open the website in default browser
-    Start-Process "https://massgrave.dev/genuine-installation-media" 
+    Start-Process "https://massgrave.dev/genuine-installation-media"
+    Write-Host "Press any key to close..." -ForegroundColor Cyan
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown") 
     
 } else {
     Write-Host "[INSTALLING] Office 2013..." -ForegroundColor Yellow
