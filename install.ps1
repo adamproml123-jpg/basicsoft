@@ -3,7 +3,7 @@
 # ==========================================
 
 Write-Host "=====================================" -ForegroundColor Cyan
-Write-Host "   BASIC SOFTWARE AUTO INSTALLER" -ForegroundColor Cyan
+Write-Host "   BASIC SOFTWARE AUTO INSTALLER BY ADAM" -ForegroundColor Cyan
 Write-Host "=====================================" -ForegroundColor Cyan
 Write-Host ""
 
