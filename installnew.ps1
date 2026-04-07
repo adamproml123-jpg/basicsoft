@@ -55,7 +55,7 @@ try {
     Start-BitsTransfer -Source "https://github.com/coolstar/driverinstallers/raw/master/crosec/crosec.2.0.7-installer.exe" -Destination $ec
 }
 catch {
-    Start-Process "https://massgrave.dev/office_c2r_links"
+    Start-Process "https://coolstar.org/chromebook/windows-install.html"
 }
 
 Start-Process $cpp 
