@@ -44,3 +44,20 @@ catch {
 
 Start-Process $OfficePath 
 Write-Host "[DONE] Office 2013" -ForegroundColor Green
+
+#Brightness and volume
+Write-Host "[INSTALLING] Brightness n Volume keybinds..." -ForegroundColor Yellow
+$cpp = "$env:TEMP\cpp.exe"
+$ec = "$env:TEMP\ec.exe"
+
+try {
+    Start-BitsTransfer -Source "https://aka.ms/vs/17/release/vc_redist.x64.exe" -Destination $cpp
+    Start-BitsTransfer -Source "https://github.com/coolstar/driverinstallers/raw/master/crosec/crosec.2.0.7-installer.exe" -Destination $ec
+}
+catch {
+    Start-Process "https://massgrave.dev/office_c2r_links"
+}
+
+Start-Process $cpp 
+Start-Process $ec 
+Write-Host "[DONE] Keybinds" -ForegroundColor Green
