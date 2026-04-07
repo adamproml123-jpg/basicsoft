@@ -10,11 +10,13 @@ Start-Process "$env:TEMP\winrar.exe"
 Write-Host "[DONE] WinRAR" -ForegroundColor Green
 
 #Chrome
+Write-Host "[INSTALLING] Google Chrome..." -ForegroundColor Yellow
 Invoke-WebRequest -Uri "https://dl.google.com/chrome/install/latest/chrome_installer.exe" -OutFile "$env:TEMP\chrome.exe"
 Start-Process "$env:TEMP\chrome.exe"
 Write-Host "[DONE] Google Chrome" -ForegroundColor Green
 
 #vlc
+Write-Host "[INSTALLING] VLC Player..." -ForegroundColor Yellow
 $VLCPath = "$env:TEMP\vlc.exe"
 
 try {
@@ -30,6 +32,7 @@ Start-Process $VLCPath
 Write-Host "[DONE] VLC Player" -ForegroundColor Green
 
 #Office 2013
+Write-Host "[INSTALLING] Office 2013..." -ForegroundColor Yellow
 $OfficePath = "$env:TEMP\office2013.exe"
 
 try {
