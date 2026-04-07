@@ -1,8 +1,14 @@
 # Header
+Write-Host ""
+Write-Host ""
+Write-Host ""
 Write-Host "===============================================" -ForegroundColor Cyan
 Write-Host "     BASIC SOFTWARE AUTO INSTALLER BY ADAM     " -ForegroundColor Cyan
 Write-Host "===============================================" -ForegroundColor Cyan
 Write-Host ""
+
+# Set Downloads folder
+$Downloads = "$env:USERPROFILE\Downloads"
 
 function Show-Step {
     param ($message)
@@ -11,7 +17,7 @@ function Show-Step {
 
 function Show-Done {
     param ($message)
-    Write-Host "[✔ DONE] $message" -ForegroundColor Green
+    Write-Host "[DONE] $message" -ForegroundColor Green
     Write-Host ""
 }
 
@@ -19,7 +25,7 @@ function Show-Done {
 # WINRAR
 # =========================
 Show-Step "Installing WinRAR..."
-$winrarPath = "$env:TEMP\winrar.exe"
+$winrarPath = "$Downloads\winrar.exe"
 
 Start-BitsTransfer -Source "https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-720.exe" -Destination $winrarPath
 Start-Process $winrarPath
@@ -30,7 +36,7 @@ Show-Done "WinRAR Installed"
 # GOOGLE CHROME
 # =========================
 Show-Step "Installing Google Chrome..."
-$chromePath = "$env:TEMP\chrome.exe"
+$chromePath = "$Downloads\chrome.exe"
 
 Start-BitsTransfer -Source "https://dl.google.com/chrome/install/latest/chrome_installer.exe" -Destination $chromePath
 Start-Process $chromePath
@@ -41,7 +47,7 @@ Show-Done "Google Chrome Installed"
 # VLC PLAYER
 # =========================
 Show-Step "Installing VLC Player..."
-$VLCPath = "$env:TEMP\vlc.exe"
+$VLCPath = "$Downloads\vlc.exe"
 
 try {
     Start-BitsTransfer -Source "https://get.videolan.org/vlc/3.0.21/win64/vlc-3.0.21-win64.exe" -Destination $VLCPath
@@ -60,7 +66,7 @@ Show-Done "VLC Player Installed"
 # OFFICE 2013
 # =========================
 Show-Step "Installing Office 2013..."
-$OfficePath = "$env:TEMP\office2013.exe"
+$OfficePath = "$Downloads\office2013.exe"
 
 try {
     Start-BitsTransfer -Source "https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=HomeStudentRetail&platform=x86&language=en-us&version=O15GA" -Destination $OfficePath
@@ -77,8 +83,8 @@ Show-Done "Office 2013 Setup Launched"
 # KEYBINDS / DRIVERS
 # =========================
 Show-Step "Installing Brightness & Volume Keybinds..."
-$cpp = "$env:TEMP\cpp.exe"
-$ec = "$env:TEMP\ec.exe"
+$cpp = "$Downloads\cpp.exe"
+$ec = "$Downloads\ec.exe"
 
 try {
     Start-BitsTransfer -Source "https://aka.ms/vs/17/release/vc_redist.x64.exe" -Destination $cpp
