@@ -28,7 +28,7 @@ Show-Step "Installing VLC Player..."
 $VLCPath = "$Downloads\vlc.exe"
 
 try {
-    Start-BitsTransfer -Source "https://get.videolan.org/vlc/3.0.21/win64/vlc-3.0.21-win64.exe" -Destination $VLCPath
+    Start-Process "https://get.videolan.org/vlc/3.0.21/win64/vlc-3.0.21-win64.exe"
 }
 catch {
     Invoke-WebRequest -Uri "https://get.videolan.org/vlc/3.0.21/win64/vlc-3.0.21-win64.exe" `
@@ -36,7 +36,7 @@ catch {
         -Headers @{ "User-Agent" = "Mozilla/5.0" }
 }
 
-Start-Process $VLCPath
+#Start-Process $VLCPath
 
 Show-Done "VLC Player Installed"
 # =========================
