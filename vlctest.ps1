@@ -1,15 +1,13 @@
 Show-Step "Installing VLC Player..."
+$VLCPath = "$Downloads\vlc.exe"
 
-$VLCPath = "$env:TEMP\vlc.exe"
+try {
+    Start-Process "https://get.videolan.org/vlc/3.0.21/win64/vlc-3.0.21-win64.exe"
+}
+catch {
+    Invoke-WebRequest -Uri "https://get.videolan.org/vlc/3.0.21/win64/vlc-3.0.21-win64.exe" `
+        -OutFile $VLCPath `
+        -Headers @{ "User-Agent" = "Mozilla/5.0" }
+}
 
-# Download installer
-Invoke-WebRequest -Uri "https://get.videolan.org/vlc/3.0.21/win64/vlc-3.0.21-win64.exe" `
-    -OutFile $VLCPath
-
-# Kill VLC if running (IMPORTANT)
-Get-Process vlc -ErrorAction SilentlyContinue | Stop-Process -Force
-
-# Install silently
-Start-Process $VLCPath -ArgumentList "/S" -Wait
-
-Show-Done "VLC Player Installed"
+#Start-Process $VLCPath
