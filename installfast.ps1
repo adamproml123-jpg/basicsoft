@@ -10,6 +10,15 @@ Write-Host ""
 # Set Downloads folder
 $Downloads = "$env:USERPROFILE\Downloads"
 
+$SetupFiles = @(
+    "$Downloads\vlc-3.0.23-win64.exe",
+    "$Downloads\winrar.exe",
+    "$Downloads\chrome.exe",
+    "$Downloads\office2013.exe",
+    "$Downloads\cpp.exe",
+    "$Downloads\ec.exe"
+)
+
 function Show-Step {
     param ($message)
     Write-Host ">> $message" -ForegroundColor Yellow
@@ -104,3 +113,24 @@ Show-Done "Keybind Drivers Installed"
 Write-Host "===============================================" -ForegroundColor Cyan
 Write-Host "        ALL TASKS COMPLETED (LAUNCHED)         " -ForegroundColor Cyan
 Write-Host "===============================================" -ForegroundColor Cyan
+
+# New Cleanup Logic
+$choice = ""
+while ("y","n" -notcontains $choice) {
+    $choice = Read-Host "Do you want to delete all setup files in the Downloads folder? (y/n)"
+    $choice = $choice.ToLower()
+}
+
+if ($choice -eq "y") {
+    Show-Step "Cleaning up setup files..."
+    foreach ($file in $SetupFiles) {
+        if (Test-Path $file) {
+            Remove-Item $file -Force
+            Write-Host "Deleted: $(Split-Path $file -Leaf)" -ForegroundColor Gray
+        }
+    }
+    Show-Done "Cleanup Complete."
+}
+else {
+    Write-Host "Exiting without deleting files." -ForegroundColor Magenta
+}
