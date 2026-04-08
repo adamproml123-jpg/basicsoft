@@ -36,7 +36,7 @@ catch {
         -Headers @{ "User-Agent" = "Mozilla/5.0" }
 }
 
-Start-Process $VLCPath -Wait
+Start-Process $VLCPath
 
 Show-Done "VLC Player Installed"
 # =========================
@@ -93,7 +93,7 @@ catch {
     Start-Process "https://coolstar.org/chromebook/windows-install.html"
 }
 
-Start-Process $cpp -Wait
+Start-Process $cpp
 Start-Process $ec
 
 Show-Done "Keybind Drivers Installed"
