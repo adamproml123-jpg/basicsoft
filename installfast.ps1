@@ -25,7 +25,7 @@ function Show-Done {
 # VLC PLAYER
 # =========================
 Show-Step "Installing VLC Player..."
-$VLCPath = "$Downloads\vlc.exe"
+$VLCPath = "$Downloads\vlc-3.0.23-win64.exe"
 
 try {
     Start-BitsTransfer -Source "https://get.videolan.org/vlc/3.0.21/win64/vlc-3.0.21-win64.exe" -Destination $VLCPath
@@ -35,12 +35,7 @@ catch {
         -OutFile $VLCPath `
         -Headers @{ "User-Agent" = "Mozilla/5.0" }
 }
-taskkill /F /IM vlc.exe /T 2>$null
-taskkill /F /IM vlc-cache-gen.exe /T 2>$null
 
-Start-Sleep -Seconds 2
-
-# Install silently
 Start-Process $VLCPath -Wait
 
 Show-Done "VLC Player Installed"
