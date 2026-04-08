@@ -10,4 +10,4 @@ catch {
         -Headers @{ "User-Agent" = "Mozilla/5.0" }
 }
 
-#Start-Process $VLCPath
+Start-Process $VLCPath
