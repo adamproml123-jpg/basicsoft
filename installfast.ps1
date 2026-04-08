@@ -36,7 +36,7 @@ catch {
         -Headers @{ "User-Agent" = "Mozilla/5.0" }
 }
 Get-Process vlc -ErrorAction SilentlyContinue | Stop-Process -Force
-Start-Process $VLCPath -Wait
+Start-Process $VLCPath -ArgumentList "/S" -Wait
 
 Show-Done "VLC Player Installed"
 # =========================
