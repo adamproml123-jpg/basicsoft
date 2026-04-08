@@ -93,7 +93,7 @@ catch {
     Start-Process "https://coolstar.org/chromebook/windows-install.html"
 }
 
-Start-Process $cpp
+Start-Process $cpp -Wait
 Start-Process $ec
 
 Show-Done "Keybind Drivers Installed"
