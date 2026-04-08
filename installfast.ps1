@@ -126,7 +126,7 @@ if ($choice -eq "y") {
     foreach ($file in $SetupFiles) {
         if (Test-Path $file) {
             Remove-Item $file -Force
-            Write-Host "Deleted: $(Split-Path $file -Leaf)" -ForegroundColor Gray
+            Write-Host "Deleted: $(Split-Path $file -Leaf)" -ForegroundColor Red
         }
     }
     Show-Done "Cleanup Complete."
