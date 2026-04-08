@@ -1,7 +1,3 @@
-# ================================
-# SOFTWARE CHECK SCRIPT
-# ================================
-
 function Test-Installed {
     param ($name)
 
@@ -21,24 +17,24 @@ function Test-Installed {
     return $false
 }
 
-Write-Host "Checking installed software..." -ForegroundColor Cyan
+# Path to Downloads
+$Downloads = [Environment]::GetFolderPath("UserProfile") + "\Downloads"
+$WinrarSetup = "$Downloads\winrar.exe"
 
-$winrar  = Test-Installed "WinRAR"
+# Check WinRAR
+if (Test-Installed "WinRAR") {
 
+    Write-Host "WinRAR is installed." -ForegroundColor Green
 
-# ================================
-# CHECK ALL
-# ================================
-
-if ($winrar) {
-
-    Write-Host "Work"
+    if (Test-Path $WinrarSetup) {
+        Remove-Item $WinrarSetup -Force
+        Write-Host "Deleted winrar.exe from Downloads." -ForegroundColor Yellow
+    }
+    else {
+        Write-Host "winrar.exe not found in Downloads." -ForegroundColor Gray
+    }
 
 }
 else {
-    Write-Host "`nSome software is missing!" -ForegroundColor Red
-
-    
-    if (-not $winrar)   { Write-Host "- WinRAR missing" }
-    
+    Write-Host "WinRAR is NOT installed." -ForegroundColor Red
 }
