@@ -57,17 +57,17 @@ try {
     
     if ($choice -eq "1"){
       Show-Step "Downloading Office 2021 setup file.."
-      Start-BitTransfer -Source "https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=ProPlus2021Retail&platform=x64&language=en-us&version=O16GA" -Destination $OfficePath
+      Start-BitsTransfer -Source "https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=ProPlus2021Retail&platform=x64&language=en-us&version=O16GA" -Destination $OfficePath
       
     }
     elseif($choice -eq "2"){
       Show-Step "Downloading Office 2024 setup file.."
-      Start-BitTransfer -Source "https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=ProPlus2024Retail&platform=x64&language=en-us&version=O16GA" -Destination $OfficePath
+      Start-BitsTransfer -Source "https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=ProPlus2024Retail&platform=x64&language=en-us&version=O16GA" -Destination $OfficePath
       
     }
     elseif($choice -eq "3"){
       Show-Step "Downloading Microsoft365 setup file.."
-      Start-BitTransfer -Source "https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=O365ProPlusRetail&platform=x64&language=en-us&version=O16GA" -Destination $OfficePath
+      Start-BitsTransfer -Source "https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=O365ProPlusRetail&platform=x64&language=en-us&version=O16GA" -Destination $OfficePath
       
     }
 
