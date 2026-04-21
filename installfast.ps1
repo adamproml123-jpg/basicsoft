@@ -3,7 +3,7 @@ Write-Host ""
 Write-Host ""
 Write-Host ""
 Write-Host "===============================================" -ForegroundColor Cyan
-Write-Host "     BASIC SOFTWARE AUTO INSTALLER BY ADAM     " -ForegroundColor Cyan
+Write-Host "  BASIC SOFTWAREINSTALLER FOR N23/N22 BY ADAM     " -ForegroundColor Cyan
 Write-Host "===============================================" -ForegroundColor Cyan
 Write-Host ""
 
