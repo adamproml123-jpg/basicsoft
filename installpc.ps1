@@ -19,6 +19,21 @@ function Show-Done {
     Write-Host "[DONE] $message" -ForegroundColor Green
     Write-Host ""
 }
+Show-Step "Donwloading VLC Player setup..."
+$VLCPath = "$Downloads\vlc-3.0.23-win64.exe"
+
+try {
+    Start-BitsTransfer -Source "https://get.videolan.org/vlc/3.0.21/win64/vlc-3.0.21-win64.exe" -Destination $VLCPath
+}
+catch {
+    Invoke-WebRequest -Uri "https://get.videolan.org/vlc/3.0.21/win64/vlc-3.0.21-win64.exe" `
+        -OutFile $VLCPath `
+        -Headers @{ "User-Agent" = "Mozilla/5.0" }
+}
+
+Start-Process $VLCPath
+
+Show-Done "VLC Player setup downloaded"
 
 # =========================
 # WINRAR
