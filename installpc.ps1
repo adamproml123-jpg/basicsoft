@@ -2,7 +2,7 @@ Write-Host ""
 Write-Host ""
 Write-Host ""
 Write-Host "===============================================" -ForegroundColor Cyan
-Write-Host "  BASIC SOFTWARE INSTALLER PC/LAPTOP BY ADAM     " -ForegroundColor Cyan
+Write-Host "  BASIC SOFTWARE INSTALLER FOR PC/LAPTOP BY ADAM     " -ForegroundColor Cyan
 Write-Host "===============================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -19,7 +19,7 @@ function Show-Done {
     Write-Host "[DONE] $message" -ForegroundColor Green
     Write-Host ""
 }
-Show-Step "Donwloading VLC Player setup..."
+Show-Step "Downloading VLC Player setup..."
 $VLCPath = "$Downloads\vlc-3.0.23-win64.exe"
 
 try {
