@@ -5,6 +5,7 @@ Write-Host "===============================================" -ForegroundColor Cy
 Write-Host "     BASIC SOFTWARE AUTO INSTALLER BY ADAM     " -ForegroundColor Cyan
 Write-Host "===============================================" -ForegroundColor Cyan
 Write-Host ""
+#test
 
 function Show-Step {
     param ($message)
