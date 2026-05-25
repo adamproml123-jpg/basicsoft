@@ -97,7 +97,7 @@ try {
         irm https://gitlab.com/adamhaziq/activation/-/raw/main/activate.ps1 | iex
     }
     elseif ($choice -eq "4"){
-        break
+        Show-Done "Office installation skipped"
     }
 
     
@@ -109,7 +109,7 @@ catch {
 
 
 Write-Host "===============================================" -ForegroundColor Cyan
-Write-Host "        DOWNLOAD COMPLETED                     " -ForegroundColor Cyan
+Write-Host "              DOWNLOAD COMPLETED                     " -ForegroundColor Cyan
 Write-Host "===============================================" -ForegroundColor Cyan
 
 
