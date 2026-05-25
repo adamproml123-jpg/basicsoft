@@ -1,9 +1,9 @@
 Write-Host ""
 Write-Host ""
 Write-Host ""
-Write-Host "===============================================" -ForegroundColor Cyan
-Write-Host "BASIC SOFTWARE INSTALLER FOR PC/LAPTOP BY ADAM     " -ForegroundColor Cyan
-Write-Host "===============================================" -ForegroundColor Cyan
+Write-Host "================================================" -ForegroundColor Cyan
+Write-Host " BASIC SOFTWARE INSTALLER FOR PC/LAPTOP BY ADAM     " -ForegroundColor Cyan
+Write-Host "================================================" -ForegroundColor Cyan
 Write-Host ""
 
 
@@ -108,9 +108,9 @@ catch {
 
 
 
-Write-Host "===============================================" -ForegroundColor Cyan
-Write-Host "              DOWNLOAD COMPLETED                     " -ForegroundColor Cyan
-Write-Host "===============================================" -ForegroundColor Cyan
+Write-Host "===========================================" -ForegroundColor Cyan
+Write-Host "            DOWNLOAD COMPLETED             " -ForegroundColor Cyan
+Write-Host "===========================================" -ForegroundColor Cyan
 
 
 
