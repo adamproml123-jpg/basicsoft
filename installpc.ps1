@@ -67,27 +67,40 @@ try {
     Write-Host "1) Office 2021"
     Write-Host "2) Office 2024"
     Write-Host "3) Microsoft 365"
+    Write-Host "4) Do not install office"
+    
 
     # Force valid input
     do {
-        $choice = Read-Host "Enter your choice [1,2,3]"
-    } while ($choice -notin @("1","2","3"))
+        $choice = Read-Host "Enter your choice [1,2,3,4]"
+    } while ($choice -notin @("1","2","3","4"))
 
     if ($choice -eq "1") {
         Show-Step "Opening Office 2021 download..."
         Start-BitsTransfer -Source "https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=ProPlus2021Retail&platform=x64&language=en-us&version=O16GA" -Destination $OfficePath
+        Start-Process $OfficePath
+        Show-Done "Office setup launched!"
+        
     }
     elseif ($choice -eq "2") {
         Show-Step "Opening Office 2024 download..."
         Start-BitsTransfer -Source "https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=ProPlus2024Retail&platform=x64&language=en-us&version=O16GA" -Destination $OfficePath
+        Start-Process $OfficePath
+        Show-Done "Office setup launched!"
+       
     }
     elseif ($choice -eq "3") {
         Show-Step "Opening Microsoft 365 download..."
         Start-BitsTransfer -Source "https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=O365ProPlusRetail&platform=x64&language=en-us&version=O16GA" -Destination $OfficePath
+        Start-Process $OfficePath
+        Show-Done "Office setup launched!"
+        
+    }
+    elseif ($choice -eq "4"){
+        break
     }
 
-    Start-Process $OfficePath
-    Show-Done "Office setup launched!"
+    
 }
 catch {
     Write-Host "[ERROR] Failed to launch Office download." -ForegroundColor Red
