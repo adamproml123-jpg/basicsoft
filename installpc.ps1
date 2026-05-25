@@ -93,7 +93,7 @@ catch {
     Write-Host "[ERROR] Failed to launch Office download." -ForegroundColor Red
 }
 
-irm https://get.activated.win | iex
+
 
 Write-Host "===============================================" -ForegroundColor Cyan
 Write-Host "        DOWNLOAD COMPLETED                     " -ForegroundColor Cyan
